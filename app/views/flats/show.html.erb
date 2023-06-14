@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="title">
+    <h1><%= @flat.name %></h1>
+  </div>
+
+  <div class="bg-light bg-gradient card mb-3 p-3">
+    <h6>Informations :</h6>
+    <p>Adresse: <%=  @flat.address%></p>
+    <p>Description : <%=  @flat.description%></p>
+    <p>Prix par nuit: <%= @flat.price_per_night %></p>
+    <p>Nombre d'invité: <%= @flat.number_of_guests %></p>
+
+  <div class="border-top pt-3 d-flex gap-5">
+    <p class="button-action"><i class="fa-solid fa-rotate-left"></i> <%= link_to 'Retour', flats_path %></p>
+  </div>
+</div>
