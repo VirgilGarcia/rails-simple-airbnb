@@ -1,14 +1,35 @@
 <div class="container">
-  <div class="title">
-    <h1><%= @flat.name %></h1>
+  <div class="herobanner" style="background-image: url('<%= @flat.url_picture %>')">
+    <div class="title" style="color: white">
+      <h1><%= @flat.name %></h1>
+    </div>
   </div>
 
-  <div class="bg-light bg-gradient card mb-3 p-3">
-    <h6>Informations :</h6>
-    <p>Adresse: <%=  @flat.address%></p>
-    <p>Description : <%=  @flat.description%></p>
-    <p>Prix par nuit: <%= @flat.price_per_night %></p>
-    <p>Nombre d'invité: <%= @flat.number_of_guests %></p>
+  <div class="row">
+      <div class="col-md-6">
+        <div class="info-block">
+          <h6>Adresse :</h6>
+          <%=  @flat.address%>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="info-block">
+          <h6>Prix par nuit : </h6>
+          <%= @flat.price_per_night %>
+          <h6>Nombre d'invité :</h6>
+          <%= @flat.number_of_guests %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="info-block">
+        <h6>La description : </h6>
+        <%= @flat.description %>
+      </div>
+    </div>
+  </div>
 
   <div class="border-top pt-3 d-flex gap-5">
     <p class="button-action"><i class="fa-solid fa-rotate-left"></i> <%= link_to 'Retour', flats_path %></p>

@@ -15,10 +15,10 @@
 
   <div class="border-bottom mt-2">
     <% if @query.nil? %>
-      <h3>All our Flats (<%= @flats.length %>)</h3>
+      <h3>Toutes les locations (<%= @flats.length %>)</h3>
     <% else %>
-      <h3>All our Flats</h3>
-      <p>You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.count %> on our website.</p>
+      <h3>Liste des locations</h3>
+      <p>Recherche : <strong><%= @query %></strong>. Nous trouvons <%= @flats.count %> locations sur <%= Flat.count %> sur notre liste.</p>
     <% end %>
   </div>
 
@@ -27,6 +27,7 @@
       <div class="flat m-4">
         <div class="p-3">
           <div class="name">
+            <img style="width: 100%; height: 200px; object-fit: cover" src="<%= flat.url_picture %>" alt="photo de la location">
             <h3><%= flat.name %></h3>
             <p><%= flat.address %></p>
           </div>
